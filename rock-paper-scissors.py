@@ -29,8 +29,12 @@ def run():
             6. Exit
             """)
 
+            if int(choose) == 6:
+                print("¡Have a nice day!")
+                break
+
             # If user and computer choose the same option
-            if option_list[int(choose)-1] == cpu_choose:
+            elif option_list[int(choose)-1] == cpu_choose:
                 print("It´s a draw")
                 message()
 
@@ -119,7 +123,8 @@ def run():
                 if (choose) == 1:  
                     print(f"{cpu_choose} vaporizes {option_list[int(choose)-1]}!")
                 else:
-                    print(f"{cpu_choose} smashes {option_list[int(choose)-1]}!")   
+                    print(f"{cpu_choose} smashes {option_list[int(choose)-1]}!")
+
         elif int(option) == 2:
             active = False
 
