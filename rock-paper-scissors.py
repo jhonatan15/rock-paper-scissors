@@ -9,6 +9,9 @@ def run():
     def win():
         print("You win")
 
+    def lose():
+        print("You lose")
+
 
     global active
     print("Welcome to the game: rock, scissors, paper, lizard and spock")
@@ -31,6 +34,7 @@ def run():
                 print("It´s a draw")
                 message()
 
+            # Elections by user
             # If user choose Rock
             elif int(choose) == 1 and (cpu_choose == "Scissors" or cpu_choose == "Lizard"):
                 win()
@@ -72,7 +76,50 @@ def run():
                     print(f"{option_list[int(choose)-1]} vaporizes {cpu_choose}!")
                 else:
                     print(f"{option_list[int(choose)-1]} smashes {cpu_choose}!")
-                
+
+
+             # Elections of the computer
+             # If computer choose Rock
+            elif cpu_choose == "Rock" and (int(choose) == 2 or int(choose) == 4):
+                lose()
+                message()
+                print(f"{cpu_choose} crushes {option_list[int(choose)-1]} !")
+
+            # If computer choose Scissors
+            elif cpu_choose == "Scissors" and (int(choose) == 4 or int(choose) == 3):
+                lose()
+                message()
+                if int(choose) == 4:  
+                    print(f"{cpu_choose} decapitates {option_list[int(choose)-1]}!")
+                else:
+                    print(f"{cpu_choose} cut {option_list[int(choose)-1]}!")
+            
+             # If computer choose Paper
+            elif cpu_choose == "Paper" and (int(choose) == 5 or int(choose) == 1):
+                lose()
+                message()
+                if int(choose) == 5:  
+                    print(f"{cpu_choose} disproves {option_list[int(choose)-1]}!")
+                else:
+                    print(f"{cpu_choose} covers {option_list[int(choose)-1]}!")
+
+             # If computer choose Lizard
+            elif cpu_choose == "Lizard" and (int(choose) == 5 or int(choose) == 3):
+                lose()
+                message()
+                if int(choose) == 5:  
+                    print(f"{cpu_choose} poisons {option_list[int(choose)-1]}!")
+                else:
+                    print(f"{cpu_choose} eats {option_list[int(choose)-1]}!")
+
+             # If computer choose Spock
+            elif cpu_choose == "Spock" and (int(choose) == 2 or int(choose) == 1):
+                win()
+                message()
+                if (choose) == 1:  
+                    print(f"{cpu_choose} vaporizes {option_list[int(choose)-1]}!")
+                else:
+                    print(f"{cpu_choose} smashes {option_list[int(choose)-1]}!")   
         elif int(option) == 2:
             active = False
 
